@@ -68,7 +68,7 @@ public class InitTestData {
         movie.setDirector("DirectorA");
         movie.setActor("ActorA");
         movie.setItemName("바람과함계 사라지다");
-        movie.setPrice(100000);
+        movie.setItemPrice(100000);
 
         movieRepository.save(movie);
 

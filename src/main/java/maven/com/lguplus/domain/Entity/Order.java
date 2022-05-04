@@ -28,6 +28,8 @@ public class Order {
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
 
+
+
     @OneToMany(mappedBy = "order",cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
@@ -35,8 +37,17 @@ public class Order {
     @JoinColumn(name="DELIVERY_ID")
     private Delivery delivery;
 
-    public void change_memebr() {
+    public void change_memebr(Member member) {
         // 필요하면 만들어 준다..
+        this.member = member;
+        member.getOrders().add(this);
     }
 
+    Order createOrderAndOrderItem(Member member,List<Item> items){
+        // item들을 받아서 orderItem List를 완성한다.
+        // member와 Item을 가지고서, Order && OrderItem, Order를 생성하여 준다...
+
+        return null;
+
+    }
 }
