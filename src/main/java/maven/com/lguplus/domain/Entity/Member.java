@@ -48,6 +48,9 @@ public class Member extends BaseEntity{
     private Period workPeriod;
 
     @Enumerated(EnumType.STRING)
+    private Grade grade;
+
+    @Enumerated(EnumType.STRING)
     private RolType roleType;
 
    @Lob
