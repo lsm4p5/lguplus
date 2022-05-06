@@ -20,4 +20,8 @@ public class Locker {
     @OneToOne(mappedBy = "locker" ,fetch = FetchType.LAZY)
     private Member member;
 
+    public Locker(String name, Member member) {
+        this.name = name;
+        this.member = member;
+    }
 }

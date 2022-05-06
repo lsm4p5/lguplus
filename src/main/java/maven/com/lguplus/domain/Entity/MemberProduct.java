@@ -31,7 +31,11 @@ public class MemberProduct {
 
     private LocalDateTime orderDateTime;
 
-
-
-
+    public MemberProduct(Member member, Product product, int count, int price, LocalDateTime orderDateTime) {
+        this.member = member;
+        this.product = product;
+        this.count = count;
+        this.price = price;
+        this.orderDateTime = orderDateTime;
+    }
 }

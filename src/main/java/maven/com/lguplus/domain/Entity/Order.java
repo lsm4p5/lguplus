@@ -43,11 +43,6 @@ public class Order {
         member.getOrders().add(this);
     }
 
-    Order createOrderAndOrderItem(Member member,List<Item> items){
-        // item들을 받아서 orderItem List를 완성한다.
-        // member와 Item을 가지고서, Order && OrderItem, Order를 생성하여 준다...
 
-        return null;
 
-    }
 }

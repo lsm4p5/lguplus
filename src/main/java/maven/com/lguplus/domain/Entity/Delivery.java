@@ -23,5 +23,11 @@ public class Delivery {
     @OneToOne(mappedBy = "delivery",fetch = FetchType.LAZY)
     private Order order;
 
-
+    public Delivery(String city, String street, String zipcode, DeliveryStatus deliveryStatus, Order order) {
+        this.city = city;
+        this.street = street;
+        this.zipcode = zipcode;
+        this.deliveryStatus = deliveryStatus;
+        this.order = order;
+    }
 }

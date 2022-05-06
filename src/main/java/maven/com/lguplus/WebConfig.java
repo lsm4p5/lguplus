@@ -1,7 +1,7 @@
 package maven.com.lguplus;
 
 import maven.com.lguplus.service.discount.DiscountPolicy;
-import maven.com.lguplus.service.discount.FixedDiscountPolicy;
+import maven.com.lguplus.service.discount.FixDiscountPolicy;
 import maven.com.lguplus.web.argumentresolver.LoginMemberArgumentResolver;
 import maven.com.lguplus.web.filter.LogFilter;
 import maven.com.lguplus.web.filter.LoginCheckFilter;
@@ -62,6 +62,6 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public DiscountPolicy discountPolicy(){
         System.out.println("WebConfig.discountPolicy + 시작 ");
-        return new FixedDiscountPolicy();
+        return new FixDiscountPolicy();
     }
 }

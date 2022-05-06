@@ -99,6 +99,11 @@ public class Member extends BaseEntity{
         team.getMembers().add(this);
     }
 
+    public void changeLocker(Locker locker) {
+        this.locker = locker;
+        locker.setMember(this);
+    }
+
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="LOCKER_ID")
@@ -138,6 +143,77 @@ public class Member extends BaseEntity{
         }
     }
 
+    /**
+     *
+     * @param loginname lotinId 임. Login시 session에 추가하고, interceptor에 의해서 Login을 핸들링함.
+     * @param username 사용자 이름임.
+     * @param password 사용자 비밀번호, 향후 암호화하여 저장해야 함
+     * @param age      사용자 나이
+     * @param homeAddress 사용자 주소, Address 객체를 사용하여 생성
+     * @param workAddress 사용자 직장 주소, Address 객체를 사용하여 생성
+     * @param workPeriod  사용자 직장 근무 기간
+     * @param grade       사용자 등급
+     * @param roleType    사용자 권한
+     * @param description 사용자 설명
+     * @param tempVariable  임시 variable
+     * @param favoriteFoods 좋아하는 음식
+     * @param addressHistory 사용자 직장 history
+     * @param testLocalDate 임시 localdate
+     * @param testLocalDateTime 임시 localdate
+     * @param team          사용자 소속 Team
+     * @param locker        사용자 locker
+     * @param orders        사용자 주문리스트
+     * @param memberProducts 사용자 물품리스트
+     */
 
+    /**
+     * 객체 생성 순서
+     *  1. loginname, username,password, age, homeAdress, workAddress, workPeriod, grade, roleType , description
+     *  2. favoriteFodds 생성시에 Member에 추가
+     *  3. addressHistory 생성시 Member에 추가
+     *  4. team 생성시 Member -> Member.changeTeam(team)
+     *  5. Locker 생성시 Member에 추가 -> Member.changeLocker(Locker locker) 호출
+     *  6. Order 생성시 Member에 추가  -> 연관관계 Method는 Order에 생성
+     *  7. Products 생성시 Member에 추가
+     */
+    public Member(String loginname, String username, String password,
+                  Integer age, Address homeAddress, Address workAddress,
+                  Period workPeriod, Grade grade, RolType roleType,
+                  String description, int tempVariable, Set<String> favoriteFoods,
+                  List<AddressEntity> addressHistory, LocalDate testLocalDate, LocalDateTime testLocalDateTime,
+                  Team team, Locker locker, List<Order> orders, List<MemberProduct> memberProducts) {
+        this.loginname = loginname;
+        this.username = username;
+        this.password = password;
+        this.age = age;
+        this.homeAddress = homeAddress;
+        this.workAddress = workAddress;
+        this.workPeriod = workPeriod;
+        this.grade = grade;
+        this.roleType = roleType;
+        this.description = description;
+        this.tempVariable = tempVariable;
+        if (favoriteFoods != null) {
+            this.favoriteFoods = favoriteFoods; // 연관관계 Method로 변경되어야함
+        }
+        if (addressHistory != null) {
+            this.addressHistory = addressHistory; // 연관관계 Method로 변경되어야함
+        }
+        this.testLocalDate = testLocalDate;
+        this.testLocalDateTime = testLocalDateTime;
+        if(team != null){
+            changeTeam(team); //Member의 연관관계 Method
+        }
+        if(locker != null){
+            changeLocker(locker);//Member의 연관관계 Method
+        }
 
+        if(orders != null){
+            this.orders = orders; // Order의 연관관계 Method로 변경되어야함.
+        }
+        if (memberProducts != null) {
+            this.memberProducts = memberProducts;  // memberProducts의 연관관계 Method로 변경되어야함.
+        }
+
+    }
 }

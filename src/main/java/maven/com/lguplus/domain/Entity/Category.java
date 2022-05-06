@@ -33,4 +33,9 @@ public class Category {
     )
     private List<Item> items = new ArrayList<>();
 
+    public Category(Category parent, List<Category> child, List<Item> items) {
+        this.parent = parent;
+        this.child = child;
+        this.items = items;
+    }
 }

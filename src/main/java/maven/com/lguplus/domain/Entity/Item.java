@@ -38,4 +38,12 @@ public class Item extends BaseEntity{
     public int calculaterItemPrice() {
         return itemPrice - discoutItemPrice;
     }
+
+    public Item(String itemName, Integer itemPrice, Integer quantity, Integer discoutItemPrice, List<Category> categories) {
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.quantity = quantity;
+        this.discoutItemPrice = discoutItemPrice;
+        this.categories = categories;
+    }
 }
