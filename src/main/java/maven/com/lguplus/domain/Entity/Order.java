@@ -21,6 +21,8 @@ public class Order {
 
     private LocalDateTime orderDate;
 
+    private String loginname;
+
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 

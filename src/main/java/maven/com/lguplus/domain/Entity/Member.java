@@ -27,6 +27,8 @@ public class Member extends BaseEntity{
 
     @NotEmpty
     private String loginname;
+
+    private String email;
     private String username;
     private String password;
     private Integer age;
@@ -176,13 +178,14 @@ public class Member extends BaseEntity{
      *  6. Order 생성시 Member에 추가  -> 연관관계 Method는 Order에 생성
      *  7. Products 생성시 Member에 추가
      */
-    public Member(String loginname, String username, String password,
+    public Member(String loginname, String email, String username, String password,
                   Integer age, Address homeAddress, Address workAddress,
                   Period workPeriod, Grade grade, RolType roleType,
                   String description, int tempVariable, Set<String> favoriteFoods,
                   List<AddressEntity> addressHistory, LocalDate testLocalDate, LocalDateTime testLocalDateTime,
                   Team team, Locker locker, List<Order> orders, List<MemberProduct> memberProducts) {
         this.loginname = loginname;
+        this.email = email;
         this.username = username;
         this.password = password;
         this.age = age;

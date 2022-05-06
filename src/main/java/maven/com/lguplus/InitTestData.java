@@ -4,6 +4,8 @@ package maven.com.lguplus;
 import lombok.RequiredArgsConstructor;
 import maven.com.lguplus.domain.Entity.*;
 import maven.com.lguplus.repository.*;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 

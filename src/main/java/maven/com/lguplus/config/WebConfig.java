@@ -1,4 +1,4 @@
-package maven.com.lguplus;
+package maven.com.lguplus.config;
 
 import maven.com.lguplus.service.discount.DiscountPolicy;
 import maven.com.lguplus.service.discount.FixDiscountPolicy;
@@ -6,14 +6,23 @@ import maven.com.lguplus.web.argumentresolver.LoginMemberArgumentResolver;
 import maven.com.lguplus.web.filter.LogFilter;
 import maven.com.lguplus.web.filter.LoginCheckFilter;
 import maven.com.lguplus.web.interceptor.LoginCheckInterceptor;
+
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import org.springframework.context.annotation.Primary;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+
 import javax.servlet.Filter;
+import javax.sql.DataSource;
+
 import java.util.List;
 
 @Configuration
@@ -64,4 +73,22 @@ public class WebConfig implements WebMvcConfigurer {
         System.out.println("WebConfig.discountPolicy + 시작 ");
         return new FixDiscountPolicy();
     }
+
+
+//    @Primary
+//    @Bean
+//    @Qualifier("primaryDataSource")
+//    @ConfigurationProperties(prefix="spring.datasource")
+//    public DataSource primaryDataSource() {
+//        return DataSourceBuilder.create().build();
+//    }
+//
+//
+//    @Bean
+//    @Qualifier("secondaryDataSource")
+//    @ConfigurationProperties(prefix = "spring.second-datasource")
+//    public DataSource secondaryDataSource() {
+//        return DataSourceBuilder.create().build();
+//    }
+
 }

@@ -76,6 +76,13 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- JPA 하이버네이트 -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.3.10.Final</version>
+		</dependency>
+
 		<!-- QueryDSL JPA Config -->
 		<dependency>
 			<groupId>com.querydsl</groupId>

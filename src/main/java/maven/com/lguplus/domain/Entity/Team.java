@@ -28,4 +28,8 @@ public class Team {
         this.teamName = name;
     }
 
+    /**
+     *  Tean을 생성후 Member에서 team.id가 같은 멤버의 changeteam을 호출하고 member의 team의 값을 넣을수 있다.
+     */
+
 }
