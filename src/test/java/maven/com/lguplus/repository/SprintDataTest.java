@@ -5,8 +5,10 @@ import maven.com.lguplus.api.dto.MemberDto;
 import maven.com.lguplus.api.dto.MemberProjection;
 import maven.com.lguplus.api.dto.MemberSearchCondition;
 import maven.com.lguplus.api.dto.MemberTeamDto;
-import maven.com.lguplus.domain.Entity.Member;
-import maven.com.lguplus.domain.Entity.Team;
+import maven.com.lguplus.domain.primary.Entity.Member;
+import maven.com.lguplus.domain.primary.Entity.Team;
+import maven.com.lguplus.repository.primary.MemberRepository;
+import maven.com.lguplus.repository.primary.TeamRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,10 +27,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SprintDataTest {
 
     @Autowired
-    private  MemberRepository memberRepository;
+    private MemberRepository memberRepository;
 
     @Autowired
-    private  TeamRepository teamRepository;
+    private TeamRepository teamRepository;
 
 //    @Autowired
 //    private  EntityManager em;

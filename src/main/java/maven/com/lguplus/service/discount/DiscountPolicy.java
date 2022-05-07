@@ -1,6 +1,6 @@
 package maven.com.lguplus.service.discount;
 
-import maven.com.lguplus.domain.Entity.Member;
+import maven.com.lguplus.domain.primary.Entity.Member;
 
 public interface DiscountPolicy {
 

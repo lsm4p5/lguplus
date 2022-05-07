@@ -2,8 +2,8 @@ package maven.com.lguplus.web.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import maven.com.lguplus.domain.Entity.Item;
-import maven.com.lguplus.repository.ItemRepository;
+import maven.com.lguplus.domain.primary.Entity.Item;
+import maven.com.lguplus.repository.primary.ItemRepository;
 import maven.com.lguplus.web.formdto.ItemSaveForm;
 import maven.com.lguplus.web.formdto.ItemUpdateForm;
 import org.springframework.stereotype.Controller;

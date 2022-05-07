@@ -4,7 +4,7 @@ package maven.com.lguplus.api.controller;
 import lombok.RequiredArgsConstructor;
 import maven.com.lguplus.api.dto.MemberSearchCondition;
 import maven.com.lguplus.api.dto.MemberTeamDto;
-import maven.com.lguplus.repository.MemberRepository;
+import maven.com.lguplus.repository.primary.MemberRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;

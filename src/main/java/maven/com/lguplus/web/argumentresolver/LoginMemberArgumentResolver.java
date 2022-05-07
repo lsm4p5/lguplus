@@ -3,7 +3,7 @@ package maven.com.lguplus.web.argumentresolver;
 
 
 import lombok.extern.slf4j.Slf4j;
-import maven.com.lguplus.domain.Entity.Member;
+import maven.com.lguplus.domain.primary.Entity.Member;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;

@@ -1,7 +1,7 @@
 package maven.com.lguplus.service.discount;
 
-import maven.com.lguplus.domain.Entity.Grade;
-import maven.com.lguplus.domain.Entity.Member;
+import maven.com.lguplus.domain.primary.Entity.Grade;
+import maven.com.lguplus.domain.primary.Entity.Member;
 
 public class FixDiscountPolicy implements DiscountPolicy{
 

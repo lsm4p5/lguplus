@@ -3,7 +3,7 @@ package maven.com.lguplus.web.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import maven.com.lguplus.domain.Entity.Member;
+import maven.com.lguplus.domain.primary.Entity.Member;
 import maven.com.lguplus.service.login.LoginService;
 import maven.com.lguplus.web.SessionConst;
 import maven.com.lguplus.web.formdto.LoginForm;

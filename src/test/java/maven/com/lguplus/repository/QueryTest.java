@@ -1,8 +1,9 @@
 package maven.com.lguplus.repository;
 
 
-import maven.com.lguplus.domain.Entity.Item;
-import maven.com.lguplus.domain.Entity.Member;
+import maven.com.lguplus.domain.primary.Entity.Item;
+import maven.com.lguplus.domain.primary.Entity.Member;
+import maven.com.lguplus.repository.primary.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,14 +12,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.util.List;
-import java.util.Optional;
 
 @Transactional
 @SpringBootTest
 public class QueryTest {
 
     @Autowired
-    private  MemberRepository memberRepository;
+    private MemberRepository memberRepository;
 
     @Autowired
     private EntityManager em;

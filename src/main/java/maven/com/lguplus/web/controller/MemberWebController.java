@@ -2,8 +2,8 @@ package maven.com.lguplus.web.controller;
 
 
 import lombok.RequiredArgsConstructor;
-import maven.com.lguplus.domain.Entity.Member;
-import maven.com.lguplus.repository.MemberRepository;
+import maven.com.lguplus.domain.primary.Entity.Member;
+import maven.com.lguplus.repository.primary.MemberRepository;
 import maven.com.lguplus.web.formdto.MemberForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

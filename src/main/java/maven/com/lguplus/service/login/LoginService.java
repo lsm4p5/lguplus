@@ -2,8 +2,8 @@ package maven.com.lguplus.service.login;
 
 
 import lombok.RequiredArgsConstructor;
-import maven.com.lguplus.domain.Entity.Member;
-import maven.com.lguplus.repository.MemberRepository;
+import maven.com.lguplus.domain.primary.Entity.Member;
+import maven.com.lguplus.repository.primary.MemberRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
