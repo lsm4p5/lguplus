@@ -8,11 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MybatisMemberDto {
 
-   private Long memberId;
+   private Long member_id;
    private String loginname;
    private String username;
    private String password;
    private int age;
-
 
 }

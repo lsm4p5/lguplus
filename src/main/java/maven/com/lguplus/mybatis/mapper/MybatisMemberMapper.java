@@ -8,13 +8,13 @@ import java.util.List;
 @Mapper
 public interface MybatisMemberMapper {
 
-    @Select("SELECT * FROM user")
+    @Select("SELECT * FROM member")
     List<MybatisMemberDto> findAll();
 
     @Select("SELECT * FROM Member WHERE member_id = #{memberId}")
     MybatisMemberDto findByUserIdx(@Param("memberId") int memberId);
 
-    @Insert("INSERT INTO user(loginname, username,password,age) VALUES(#{loginname},#{username},#{password}, #{age}")
+    @Insert("INSERT INTO member(loginname, username,password,age) VALUES(#{loginname},#{username},#{password}, #{age}")
     @Options(useGeneratedKeys = true, keyProperty = "member_id")
     public abstract int save(@Param("mybatisMemberDto") final MybatisMemberDto mybatisMemberDto);
 }

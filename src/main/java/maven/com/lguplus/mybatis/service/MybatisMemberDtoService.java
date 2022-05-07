@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MybatisMemberService {
+public class MybatisMemberDtoService {
     private MybatisMemberMapper mybatisMemberMapper;
 
-    public UserService(MybatisMemberMapper userMapper) {
-        this.mybatisMemberMapper = userMapper;
+    public  MybatisMemberDtoService(MybatisMemberMapper mybatisMemberMapper) {
+        this.mybatisMemberMapper = mybatisMemberMapper;
     }
 
     // 멤버 전체 조회
