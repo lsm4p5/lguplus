@@ -6,4 +6,8 @@
     <select id="findMemberAll" resultType="MybatisMemberDto">
         SELECT * FROM member;
     </select>
+    <insert id="mybatisMemberDtoAdd" useGeneratedKeys="true" keyProperty="member_id">
+        INSERT into member (loginname,username,password,age)
+          VALUES (#{loginname}, #{username},#{password},#{age})
+    </insert>
 </mapper>

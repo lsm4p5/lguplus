@@ -3,9 +3,11 @@ package maven.com.lguplus.mybatis.dto;
 import com.querydsl.core.annotations.QueryProjection;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Getter
 @NoArgsConstructor
+@ToString
 public class MybatisMemberDto {
 
    private Long member_id;
@@ -14,4 +16,10 @@ public class MybatisMemberDto {
    private String password;
    private int age;
 
+   public MybatisMemberDto(String loginname, String username, String password, int age) {
+      this.loginname = loginname;
+      this.username = username;
+      this.password = password;
+      this.age = age;
+   }
 }

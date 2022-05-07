@@ -9,4 +9,6 @@ import java.util.List;
 public interface MybatisMemberxmlMapper {
 
     List<MybatisMemberDto> findMemberAll();
+
+    void mybatisMemberDtoAdd(MybatisMemberDto mybatisMemberDto);
 }
