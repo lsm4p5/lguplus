@@ -4,6 +4,7 @@ import maven.com.lguplus.mybatis.dto.MybatisMemberDto;
 import maven.com.lguplus.mybatis.mapper.MybatisMemberxmlMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
