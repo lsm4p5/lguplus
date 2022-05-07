@@ -21,4 +21,6 @@ public class MybatisMemberDtoService {
             return null;
         return mybatisMemberDtoList;
     }
+
+
 }

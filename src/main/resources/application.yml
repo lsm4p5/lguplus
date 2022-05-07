@@ -20,6 +20,7 @@ spring: #띄어쓰기 없음
         format_sql: true #띄어쓰기 8칸
         default_batch_fetch_size: 100
         use_sql_comments: true
+
 #  thymeleaf:
 #     cache: false
 #      prefix: classpath:/templates/
@@ -35,3 +36,6 @@ server:
    include-statctrace: always
    include-binding: always
 
+mybatis:
+  mapper-locations: /mapper/**/*.xml
+  type-aliases-package: maven.com.lguplus.mybatis

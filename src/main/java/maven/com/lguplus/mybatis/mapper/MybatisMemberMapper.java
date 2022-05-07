@@ -17,4 +17,6 @@ public interface MybatisMemberMapper {
     @Insert("INSERT INTO member(loginname, username,password,age) VALUES(#{loginname},#{username},#{password}, #{age}")
     @Options(useGeneratedKeys = true, keyProperty = "member_id")
     public abstract int save(@Param("mybatisMemberDto") final MybatisMemberDto mybatisMemberDto);
+
+
 }
