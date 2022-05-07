@@ -32,7 +32,7 @@ import java.util.Properties;
 //        transactionManagerRef="transactionManagerSecondary",
 //        basePackages= { "com.lguplus.repository.EntitySecond" }) //  Repository
 public class SecondaryConfig {
-
+/*
     @Autowired
     @Qualifier("secondaryDataSource")
     private DataSource secondaryDataSource;
@@ -80,6 +80,6 @@ public class SecondaryConfig {
     PlatformTransactionManager transactionManagerSecondary(EntityManagerFactoryBuilder builder) {
         return new JpaTransactionManager(entityManagerFactorySecondary(builder).getObject());
     }
-
+*/
 
 }

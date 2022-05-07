@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @Slf4j
 public class TimeTraceApp {
 
-    @Around("execution(* com.lguplus..*(..))")
+    @Around("execution(* maven.com.lguplus..*(..))")
     public Object execute(@NotNull ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
         log.info("start = {}" , joinPoint.toString());
