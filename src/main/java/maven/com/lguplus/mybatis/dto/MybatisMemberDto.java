@@ -8,15 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MybatisMemberDto {
 
+   private Long memberId;
    private String loginname;
    private String username;
    private String password;
    private int age;
 
-    public MybatisMemberDto(String loginname, String username, String password, int age) {
-        this.loginname = loginname;
-        this.username = username;
-        this.password = password;
-        this.age = age;
-    }
+
 }
