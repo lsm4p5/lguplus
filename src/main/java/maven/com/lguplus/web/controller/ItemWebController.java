@@ -74,7 +74,7 @@ public class ItemWebController {
         //성공 로직
         Item item = new Item();
         item.setItemName(form.getItemName());
-        item.setItemPrice(form.getPrice());
+        item.setPrice(form.getPrice());
         item.setQuantity(form.getQuantity());
 
         Item savedItem = itemRepository.save(item);
@@ -115,7 +115,7 @@ public class ItemWebController {
 
         Item itemParam = new Item();
         itemParam.setItemName(form.getItemName());
-        itemParam.setItemPrice(form.getPrice());
+        itemParam.setPrice(form.getPrice());
         itemParam.setQuantity(form.getQuantity());
 
         Optional<Item> optionalItem = itemRepository.findById(itemId);
@@ -123,7 +123,7 @@ public class ItemWebController {
             Item findItem = optionalItem.get();
             log.info("===== As-Isz(Item ======= {} " ,findItem);
             findItem.setItemName(itemParam.getItemName());
-            findItem.setItemPrice(itemParam.getItemPrice());
+            findItem.setPrice(itemParam.getPrice());
             findItem.setQuantity(itemParam.getQuantity());
             Item saved = itemRepository.save(findItem);
             log.info("=======Updated(To-Be) =========={}",saved);

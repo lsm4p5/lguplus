@@ -21,7 +21,7 @@ public class Item extends BaseEntity{
     private Long id;
 
     private String itemName;
-    private Integer itemPrice;
+    private Integer price;
     private Integer quantity;
 
     private Integer discoutItemPrice;
@@ -31,17 +31,17 @@ public class Item extends BaseEntity{
 
     public Item(String itemName, Integer price, Integer quantity) {
         this.itemName = itemName;
-        this.itemPrice = price;
+        this.price = price;
         this.quantity = quantity;
     }
 
     public int calculaterItemPrice() {
-        return itemPrice - discoutItemPrice;
+        return price - discoutItemPrice;
     }
 
     public Item(String itemName, Integer itemPrice, Integer quantity, Integer discoutItemPrice, List<Category> categories) {
         this.itemName = itemName;
-        this.itemPrice = itemPrice;
+        this.price = itemPrice;
         this.quantity = quantity;
         this.discoutItemPrice = discoutItemPrice;
         this.categories = categories;
