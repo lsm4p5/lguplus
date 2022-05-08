@@ -1,4 +1,4 @@
-package maven.com.lguplus.domain.primary.SecondaryEntity;
+package maven.com.lguplus.domain.secondary.SecondaryEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

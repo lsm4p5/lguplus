@@ -1,4 +1,4 @@
-package maven.com.lguplus.config;
+package maven.com.lguplus;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;

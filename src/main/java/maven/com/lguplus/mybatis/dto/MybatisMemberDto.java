@@ -3,11 +3,13 @@ package maven.com.lguplus.mybatis.dto;
 import com.querydsl.core.annotations.QueryProjection;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @Getter
 @NoArgsConstructor
 @ToString
+@Setter
 public class MybatisMemberDto {
 
    private Long member_id;

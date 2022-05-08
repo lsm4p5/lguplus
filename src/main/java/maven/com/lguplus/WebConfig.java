@@ -1,4 +1,4 @@
-package maven.com.lguplus.config;
+package maven.com.lguplus;
 
 import maven.com.lguplus.service.discount.DiscountPolicy;
 import maven.com.lguplus.service.discount.FixDiscountPolicy;
@@ -6,23 +6,14 @@ import maven.com.lguplus.web.argumentresolver.LoginMemberArgumentResolver;
 import maven.com.lguplus.web.filter.LogFilter;
 import maven.com.lguplus.web.filter.LoginCheckFilter;
 import maven.com.lguplus.web.interceptor.LoginCheckInterceptor;
-
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import org.springframework.context.annotation.Primary;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-
 import javax.servlet.Filter;
-import javax.sql.DataSource;
-
 import java.util.List;
 
 @Configuration
