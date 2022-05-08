@@ -30,6 +30,11 @@ public class Order {
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
 
+    private String itemName;
+    private int itemPrice;
+    private int discountPrice;
+
+
 
 
     @OneToMany(mappedBy = "order",cascade = CascadeType.ALL)
@@ -45,6 +50,10 @@ public class Order {
         member.getOrders().add(this);
     }
 
-
-
+    public Order(Member member, String itemName, int itemPrice, int discountPrice) {
+        this.member = member;
+        this.itemName = itemName;
+        this.itemPrice = itemPrice;
+        this.discountPrice = discountPrice;
+    }
 }

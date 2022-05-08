@@ -2,7 +2,12 @@ package maven.com.lguplus.service.discount;
 
 import maven.com.lguplus.domain.primary.Entity.Grade;
 import maven.com.lguplus.domain.primary.Entity.Member;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Service
+@Primary
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent = 10;

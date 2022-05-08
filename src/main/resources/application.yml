@@ -19,7 +19,7 @@ spring: #띄어쓰기 없음
         # show_sql: true #띄어쓰기 8칸
         format_sql: true #띄어쓰기 8칸
         default_batch_fetch_size: 100
-        use_sql_comments: true
+#        use_sql_comments: true
 
 #  thymeleaf:
 #     cache: false

@@ -59,11 +59,11 @@ public class WebConfig implements WebMvcConfigurer {
         return filterRegistrationBean;
     }
 
-    @Bean
-    public DiscountPolicy discountPolicy(){
-        System.out.println("WebConfig.discountPolicy + 시작 ");
-        return new FixDiscountPolicy();
-    }
+//    @Bean
+//    public DiscountPolicy discountPolicy(){
+//        System.out.println("WebConfig.discountPolicy + 시작 ");
+//        return new FixDiscountPolicy();
+//    }
 
 
 //    @Primary
