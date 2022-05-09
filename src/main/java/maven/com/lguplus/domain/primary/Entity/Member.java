@@ -135,7 +135,14 @@ public class Member extends BaseEntity{
         }
     }
 
-    public Member(String loginname, String username, String password, int age,Team team) {
+
+    public Member(Long id, String username, Grade grade) {
+        this.id = id;
+        this.username = username;
+        this.grade = grade;
+    }
+
+    public Member(String loginname, String username, String password, int age, Team team) {
         this.loginname = loginname;
         this.username = username;
         this.password = password;
