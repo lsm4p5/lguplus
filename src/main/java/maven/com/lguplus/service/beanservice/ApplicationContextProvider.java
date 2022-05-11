@@ -8,6 +8,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class ApplicationContextProvider implements ApplicationContextAware {
     private static ApplicationContext ctx = null;
+
+
+
     public static ApplicationContext getApplicationContext(){
         return ctx;
     }
@@ -16,3 +19,4 @@ public class ApplicationContextProvider implements ApplicationContextAware {
         this.ctx = ctx;
     }
 }
+

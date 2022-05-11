@@ -1,6 +1,7 @@
 package maven.com.lguplus.aop;
 
 import lombok.extern.slf4j.Slf4j;
+import maven.com.lguplus.aop.exam.annotation.Trace;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;

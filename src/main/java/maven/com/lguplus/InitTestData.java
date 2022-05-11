@@ -11,7 +11,7 @@ import javax.annotation.PostConstruct;
 import java.util.Optional;
 
 
-@Component
+//@Component
 @RequiredArgsConstructor
 //@Transactional
 public class InitTestData {
