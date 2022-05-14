@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import maven.com.lguplus.domain.primary.Entity.Member;
 import maven.com.lguplus.repository.primary.MemberRepository;
+
+import maven.com.lguplus.trace.annotation.Trace_annotation;
 import maven.com.lguplus.web.argumentresolver.Login;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,7 @@ public class HomeController {
 
     private final MemberRepository memberRepository;
 
+    @Trace_annotation
     @GetMapping("/")
     public String homeLoginArgumentResolver(@Login Member member, Model model) {
 
