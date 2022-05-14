@@ -19,16 +19,22 @@ public class LogTraceAspect {
         this.logTrace = logTrace;
     }
 
-    @Around("execution(*  maven.com.lguplus.api.controller..*(..))")
+    @Around("execution(*  maven.com.lguplus.api.controller..*(..)) || execution(*  maven.com.lguplus.service..*(..)) || execution(*  maven.com.lguplus.repository..*(..)) ||execution(*  maven.com.lguplus.controller..*(..))")
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
         TraceStatus status = null;
 
         try {
-            String message = joinPoint.getSignature().toShortString();
+            //String message = joinPoint.getSignature().toShortString();
+            String message = joinPoint.getSignature().toLongString();
+//            System.out.println( "message = " + message );
+//            System.out.println( "joinPoint.getName() = " + joinPoint.getArgs().toString() );
 
             status = logTrace.begin( message );
             //로직 호출
             Object result = joinPoint.proceed();
+
+            logTrace.end( status );
+
 
             return result;
 

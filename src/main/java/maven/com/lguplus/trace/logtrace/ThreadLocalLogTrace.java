@@ -7,7 +7,7 @@ import maven.com.lguplus.trace.TraceStatus;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Component
+//@Component
 public class ThreadLocalLogTrace implements LogTrace {
 
     private static final String START_PREFIX = "-->";
