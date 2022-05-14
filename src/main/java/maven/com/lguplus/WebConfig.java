@@ -1,7 +1,7 @@
 package maven.com.lguplus;
 
-import maven.com.lguplus.service.discount.DiscountPolicy;
-import maven.com.lguplus.service.discount.FixDiscountPolicy;
+
+import maven.com.lguplus.trace.logtrace.LogTrace;
 import maven.com.lguplus.web.argumentresolver.LoginMemberArgumentResolver;
 import maven.com.lguplus.web.filter.LogFilter;
 import maven.com.lguplus.web.filter.LoginCheckFilter;
@@ -18,6 +18,11 @@ import java.util.List;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+
+//    @Bean
+//    public LogTraceAspect logTraceAspect(LogTrace logTrace) {
+//        return new LogTraceAspect( logTrace );
+//    }
 
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {

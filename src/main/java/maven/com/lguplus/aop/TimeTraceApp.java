@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
 
-@Component
+//@Component
 @Aspect
 @Slf4j
 public class TimeTraceApp {
@@ -17,14 +17,16 @@ public class TimeTraceApp {
     @Around("execution(* maven.com.lguplus..*(..))")
     public Object execute(@NotNull ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
-        log.info("start = {}" , joinPoint.toString());
+        Object[] args = joinPoint.getArgs();
+        log.info("Start : function={}, args={},{}" ,joinPoint.getSignature().getName(),args, joinPoint.toString());
 
         try{
             return joinPoint.proceed();
         }finally {
             long finish = System.currentTimeMillis();
             long timeMs = finish - start;
-            log.info("END = {} {}ms" ,joinPoint.toString() , timeMs);
+           // log.info("END = function,{}, args{},{},{}, {}ms" ,joinPoint.getSignature().getName(),args, joinPoint.getSignature().toShortString(),joinPoint.toString() ,timeMs);
+            log.info("END : function={}, args={},{}, {}ms" ,joinPoint.getSignature().getName(),args, joinPoint.toString() ,timeMs);
         }
     }
 
