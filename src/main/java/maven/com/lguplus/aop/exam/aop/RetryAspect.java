@@ -1,5 +1,7 @@
 package maven.com.lguplus.aop.exam.aop;
 
+
+
 import lombok.extern.slf4j.Slf4j;
 import maven.com.lguplus.aop.exam.annotation.Retry;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -12,6 +14,8 @@ import org.springframework.stereotype.Component;
 public class RetryAspect {
 
   //  @Around("@abbitatuib(maven.lguplus.aop.exam.annotation.Retry)")
+  //  c
+ //   @Around( "@annotation(maven.com.lguplus.aop.exam.annotation.Retry)" )
     @Around("@annotation(retry)")
     public Object doRetry(ProceedingJoinPoint joinPoint, Retry retry) throws Throwable {
 

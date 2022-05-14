@@ -19,7 +19,7 @@ public class HomeController {
 
     private final MemberRepository memberRepository;
 
-    @Trace_annotation
+
     @GetMapping("/")
     public String homeLoginArgumentResolver(@Login Member member, Model model) {
 

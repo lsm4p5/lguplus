@@ -3,6 +3,7 @@ package maven.com.lguplus.mybatis.service;
 import maven.com.lguplus.mybatis.dto.MybatisMemberDto;
 import maven.com.lguplus.mybatis.mapper.MybatisMemberMapper;
 import maven.com.lguplus.mybatis.mapper.MybatisMemberxmlMapper;
+import maven.com.lguplus.trace.annotation.Trace_annotation;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class MybatisMemberDtoxmlService {
         this.mybatisMemberxmlMapper = mybatisMemberxmlMapper;
     }
 
+    @Trace_annotation
     public List<MybatisMemberDto> getAllUsers_xml() {
         System.out.println("MybatisMemberDtoxmlService.getAllUsers_xml");
         final List<MybatisMemberDto> mybatisMemberDtoList = mybatisMemberxmlMapper.findMemberAll();

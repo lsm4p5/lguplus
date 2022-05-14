@@ -7,6 +7,8 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import maven.com.lguplus.api.dto.MemberSearchCondition;
 import maven.com.lguplus.api.dto.MemberTeamDto;
 import maven.com.lguplus.api.dto.QMemberTeamDto;
+import maven.com.lguplus.domain.primary.Entity.QMember;
+import maven.com.lguplus.domain.primary.Entity.QTeam;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.support.PageableExecutionUtils;
@@ -15,8 +17,9 @@ import javax.persistence.EntityManager;
 
 import java.util.List;
 
-import static maven.com.lguplus.domain.Entity.QMember.member;
-import static maven.com.lguplus.domain.Entity.QTeam.team;
+
+import static maven.com.lguplus.domain.primary.Entity.QMember.member;
+import static maven.com.lguplus.domain.primary.Entity.QTeam.team;
 import static org.thymeleaf.util.StringUtils.isEmpty;
 
 public class MemberRepositoryImpl implements MemberRepositoryCustom{
@@ -29,6 +32,7 @@ public class MemberRepositoryImpl implements MemberRepositoryCustom{
 
     @Override
     public List<MemberTeamDto> search(MemberSearchCondition condition) {
+
 
 
         return queryFactory

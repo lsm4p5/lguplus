@@ -1,6 +1,7 @@
 package maven.com.lguplus.api.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import maven.com.lguplus.trace.annotation.Trace_annotation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RestController;
