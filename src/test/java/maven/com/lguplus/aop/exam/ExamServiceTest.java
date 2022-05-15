@@ -34,6 +34,7 @@ class ExamServiceTest {
         } catch (Exception e) {
             Assertions.assertThat(e).isInstanceOf(InvalidDataAccessApiUsageException.class);
             //e.printStackTrace();
+            throw e;
         }
 
     }

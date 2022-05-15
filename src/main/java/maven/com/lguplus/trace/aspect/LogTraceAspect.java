@@ -43,10 +43,12 @@ public class LogTraceAspect {
         try {
             //String message = joinPoint.getSignature().toShortString();
            Object[] args = joinPoint.getArgs();
+       //    System.out.println( "args = " + args );
            String message = getStringMessage( joinPoint.getSignature().toLongString(), args );
 
-//            System.out.println( "message = " + message );
+      //      System.out.println( "message = " + message );
             status = logTrace.begin( message );
+
             //로직 호출
             Object result = joinPoint.proceed();
 
@@ -68,9 +70,17 @@ public class LogTraceAspect {
 
         String add_str="[";
 
+        int i =0;
         for (Object arg : args) {
-          //  System.out.println( "arg = " + arg );
-            add_str += arg;
+  //          System.out.println( "arg = " + arg);
+            if(i==0) {
+                add_str += "Param={" + arg +"}";
+            }else if(i==1){
+                add_str += " Return{" + arg +"}";
+            }else {
+                add_str += " {" + arg +"}";
+            }
+            i++;
         }
         add_str +="]";
         message = message + add_str;

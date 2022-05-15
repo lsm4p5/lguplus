@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import maven.com.lguplus.aop.exam.annotation.Retry;
 import maven.com.lguplus.trace.TraceStatus;
 import maven.com.lguplus.trace.logtrace.LogTrace;
+import maven.com.lguplus.trace.retryservice.annotation.Retryannotation;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -52,8 +53,9 @@ public class RetryAspectAction {
             }
             throw exceptionHolder;
         } catch (Exception e2) {
-            logTrace.exception(status, e2 );
-            e2.printStackTrace();
+            exceptionHolder = e2;
+            log.info("=================={}===================",status,e2);
+            //e2.printStackTrace();
             throw e2;
         }
 
@@ -64,9 +66,17 @@ public class RetryAspectAction {
 
         String add_str="[";
 
+        int i =0;
         for (Object arg : args) {
-            //  System.out.println( "arg = " + arg );
-            add_str += arg;
+   //         System.out.println( "arg = " + arg);
+            if(i==0) {
+                add_str += "Param={" + arg +"}";
+            }else if(i==1){
+                add_str += " Return{" + arg +"}";
+            }else {
+                add_str += " {" + arg +"}";
+            }
+            i++;
         }
         add_str +="]";
         message = message + add_str;

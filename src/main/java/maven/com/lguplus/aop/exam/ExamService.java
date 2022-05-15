@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class ExamService {
     private final ExamRepository examRepository;
 
-    @Trace_annotation
+
     public void request(String itemId) {
         examRepository.save( itemId );
     }
