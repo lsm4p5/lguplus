@@ -19,10 +19,6 @@ import java.util.List;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-//    @Bean
-//    public LogTraceAspect logTraceAspect(LogTrace logTrace) {
-//        return new LogTraceAspect( logTrace );
-//    }
 
     @Override
     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {

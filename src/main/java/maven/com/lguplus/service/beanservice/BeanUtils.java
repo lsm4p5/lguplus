@@ -1,14 +1,26 @@
 package maven.com.lguplus.service.beanservice;
 
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 
 
+import org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext;
 import org.springframework.context.ApplicationContext;
-import org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping;
+import org.springframework.stereotype.Component;
 
+
+//@Component
+@Slf4j
 public class BeanUtils {
 
+  //  private final AnnotationConfigServletWebServerApplicationContext ac;
+
+//    @Autowired
+//    public BeanUtils(AnnotationConfigServletWebServerApplicationContext ac) {
+//        this.ac = ac;
+//    }
 
     /** Bean 이름으로 단일 Bean 조회 */
     public static Object getBean(String beanId) {
@@ -63,15 +75,16 @@ public class BeanUtils {
         for (String beanDefinitionName : beanDefinitionNames) {
             if(beanDefinitionName.contains("bean")) {
                 System.out.println("beanDefinitionName = " + beanDefinitionName);
-
             }
         }
-
-      //  BeanDefinition discountService = beanDefinitionRegistry.getBeanDefinition("discountService");
-
-       // System.out.println("discountService = " + discountService);
 
         return applicationContext.getBeanDefinitionNames();
     }
 
+    public String[] getAppBeans() {
+       // String applicationName = ac.getApplicationName();
+      //  log.info( "applicationName = {}", applicationName );
+
+        return null;
+    }
 }
