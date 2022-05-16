@@ -16,6 +16,7 @@ public class ExamRepository {
     @Retry(4)
     public String save(String itemId) {
         seq++;
+        System.out.println( "ExamRepository.save" );
         if (seq % 5 == 0) {
             throw new IllegalStateException( "예외 발생 [" + seq + "]");
         }

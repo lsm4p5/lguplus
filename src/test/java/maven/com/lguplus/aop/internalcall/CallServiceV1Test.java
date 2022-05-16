@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Component;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 @Import( CallLogAspect.class )
 @Component
