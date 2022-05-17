@@ -20,8 +20,11 @@ spring: #띄어쓰기 없음
         format_sql: true #띄어쓰기 8칸
         default_batch_fetch_size: 100
 #        use_sql_comments: true
-  main:
-    allow-circular-references: true # 스프링부트 2.6릴리즈노트를 참고하니 순환참조를 기본적으로 금지함. 그래서 추가함.
+#  main:
+#    allow-circular-references: true # 스프링부트 2.6릴리즈노트를 참고하니 순환참조를 기본적으로 금지함. 그래서 추가함.
+  batch:
+    job:
+      names: exampleJob
 
 #  thymeleaf:
 #     cache: false
@@ -41,3 +44,9 @@ server:
 mybatis:
   mapper-locations: /mapper/**/*.xml
   type-aliases-package: maven.com.lguplus.mybatis
+
+uplus:
+  openapi:
+    uplusUrl: http://localhost:8080/api/v1/http_request
+    clientId:
+    clientSecret:

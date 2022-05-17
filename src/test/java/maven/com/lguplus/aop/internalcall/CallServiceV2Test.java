@@ -14,24 +14,24 @@ import org.springframework.stereotype.Component;
 @SpringBootTest
 class CallServiceV2Test {
 
-
-    @Autowired
-    CallServiceV2 callServiceV2;
-
-
-    @Test
-    void external() {
-        // log.info("target={}", callServiceV0);
-      callServiceV2.external();
-
-
-    }
-
-    @Test
-    void internal() {
-
-         callServiceV2.internal();
-
-    }
+//
+//    @Autowired
+//    CallServiceV2 callServiceV2;
+//
+//
+//    @Test
+//    void external() {
+//        // log.info("target={}", callServiceV0);
+//      callServiceV2.external();
+//
+//
+//    }
+//
+//    @Test
+//    void internal() {
+//
+//         callServiceV2.internal();
+//
+//    }
 
 }
