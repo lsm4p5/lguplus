@@ -6,6 +6,7 @@ import maven.com.lguplus.domain.primary.Entity.Item;
 import maven.com.lguplus.repository.primary.ItemRepository;
 import maven.com.lguplus.web.formdto.ItemSaveForm;
 import maven.com.lguplus.web.formdto.ItemUpdateForm;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -98,7 +99,7 @@ public class ItemWebController {
     }
 
     @PostMapping("/{itemId}/edit")
-    public String edit(@PathVariable Long itemId, @Validated @ModelAttribute("item") ItemUpdateForm form, BindingResult bindingResult) {
+    public String edit(@PathVariable Long itemId, @Validated @ModelAttribute("item") @NotNull ItemUpdateForm form, BindingResult bindingResult) {
 
         //특정 필드 예외가 아닌 전체 예외
         if (form.getPrice() != null && form.getQuantity() != null) {

@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor//(access = AccessLevel.PROTECTED)
 @Getter @Setter
-@ToString(of ={"itemName","itemPrice","quantity","discountItemPrice"})
+@ToString(of ={"itemName","price","quantity","discountItemPrice"})
 //@Inheritance(strategy = InheritanceType.JOINED)
 //@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) //-> 사용하면 안됨

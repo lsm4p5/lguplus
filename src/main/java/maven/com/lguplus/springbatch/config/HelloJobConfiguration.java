@@ -4,29 +4,36 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.StepContribution;
+import org.springframework.batch.core.configuration.JobRegistry;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.core.configuration.support.JobRegistryBeanPostProcessor;
+import org.springframework.batch.core.configuration.support.MapJobRegistry;
 import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.batch.BatchProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor
 @Configuration
-@EnableBatchProcessing
-@Qualifier("primaryDataSource")
+@EnableBatchProcessing()
 public class HelloJobConfiguration {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
 
 
-//    @Bean
+
+
+    //    @Bean
 //    @Primary
 //    public BatchProperties batchProperties () {
 //
@@ -59,6 +66,7 @@ public class HelloJobConfiguration {
                         System.out.println( ">>[1] hello Stpring Batch!!!" );
                         System.out.println( "============================" );
                         return RepeatStatus.FINISHED;
+
                     }
                 })
                 .build();
@@ -74,6 +82,7 @@ public class HelloJobConfiguration {
                         System.out.println( ">>[2] hello Stpring Batch!!!" );
                         System.out.println( "============================" );
                         return RepeatStatus.FINISHED;
+
                     }
                 })
                 .build();

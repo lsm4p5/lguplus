@@ -11,7 +11,9 @@ spring: #띄어쓰기 없음
     username: sa
     password:
     driver-class-name: org.h2.Driver
+
   jpa: #띄어쓰기 2칸
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
     hibernate: #띄어쓰기 4칸
       ddl-auto: none #띄어쓰기 6칸
     properties: #띄어쓰기 4칸
@@ -22,9 +24,6 @@ spring: #띄어쓰기 없음
 #        use_sql_comments: true
 #  main:
 #    allow-circular-references: true # 스프링부트 2.6릴리즈노트를 참고하니 순환참조를 기본적으로 금지함. 그래서 추가함.
-  batch:
-    job:
-      names: exampleJob
 
 #  thymeleaf:
 #     cache: false
